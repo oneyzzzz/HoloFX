@@ -5,7 +5,7 @@ api-version: '1.21'
 load: STARTUP
 authors: [ oneyz_ ]
 description: "Advanced hologram management system with per-line permissions, dynamic editing, and batch loading optimization"
-website: "https://github.com/oneyzzzz/HoloFX/"
+website: "https://github.com"
 
 commands:
   holo:
@@ -44,10 +44,6 @@ permissions:
     parent: holo.use
   holo.settings:
     description: Allow viewing hologram settings
-    default: op
-    parent: holo.use
-  holo.teleport:
-    description: Allow teleporting to holograms
     default: op
     parent: holo.use
 

@@ -1,0 +1,333 @@
+prefix: "&b&lHolo&f&lFX &8&l| &r"
+
+help:
+  header: "&6&l━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  title: "&6&lHoloFX Commands"
+  command_format: "&e/{usage} &7- {description}"
+  footer: "&6&l━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+descriptions:
+  create: "Create a new hologram at your current location"
+  remove: "Delete a hologram and all its lines from disk"
+  summon: "Summon a hologram at your current location"
+  teleport: "Move a hologram to your location"
+  move: "Edit the position of a hologram interactively"
+  save: "Save hologram(s) to the configuration file"
+  edit: "Edit hologram settings and content"
+  list: "Display all loaded holograms"
+  settings: "Open the settings interface as a book"
+  reload: "Reload all configuration files"
+
+general:
+  errors:
+    hologram:
+      not_loaded: "&cNo holograms loaded."
+      spawn_failed: "&cFailed to create hologram &e{name} &cin world &e{world}&c. If the problem persists, please contact an administrator."
+    files:
+      save_failed: "&cFailed to save changes for hologram &e{name} &cto file&c. If the problem persists, please contact an administrator."
+    commands:
+      execution_failed: "&cAn error occurred while executing this command. If the problem persists, please contact an administrator."
+
+commands:
+
+  create:
+    usage: "&cCorrect usage: /holo create <hologram_name> <text>"
+    invalid_name: "&cHologram name can only contain alphanumeric characters, - and _"
+    already_exists: "&cHologram named &e{name} &calready exists!"
+    created: "&aHologram &e{name} &ahas been created at your location"
+    creation_failed: "&cFailed to create hologram: {error}"
+    player_only: "&cThis command is only available for players"
+
+  remove:
+    usage: "&cCorrect usage: /holo remove <hologram_name>"
+    not_found: "&cHologram &e{name} &cnot found!"
+    removed: "&aHologram &e{name} &chas been removed"
+    remove_failed: "&cFailed to remove hologram: {error}"
+
+  summon:
+    usage: "&cCorrect usage: /holo summon <hologram_name>"
+    not_loaded: "&cHologram &e{name} &cis not loaded!"
+    summoned: "&aHologram &e{name} &ahas been summoned at your location"
+    summon_failed: "&cFailed to summon hologram: {error}"
+    already_active: "&cHologram &e{name} &cis already active!"
+
+  teleport:
+    usage: "&cCorrect usage: /holo teleport <hologram_name>"
+    teleported: "&aHologram &e{name} &ahas been moved to your location"
+    teleport_failed: "&cFailed to move hologram: {error}"
+    invalid_world: "&cHologram is in a different world!"
+
+  edit:
+
+    general:
+      invalid_action: "&cUnknown edit action: &e{action}"
+      available_actions_info: "&bAvailable edit actions:"
+      actions:
+        header: "&8&m                             "
+        available: "&bAvailable edit actions:"
+        item: "&e{action_name}"
+        footer: "&8&m                             "
+      error_executing: "&cFailed to execute edit command: {error}"
+
+    usage: "&cCorrect usage: /holo edit <hologram_name> <action> [arguments...]"
+    invalid_action: "&cUnknown edit action: &e{action}"
+    line_must_be_number: "&cLine number must be a number!"
+    line_number_out_of_range: "&cLine number &e{line} &cis out of range! Hologram has &e{max_lines} &clines."
+    not_active: "&cHologram &e{name} &cis not active!"
+    failed: "&cFailed to execute edit: {error}"
+    old_text: "&7Old text: &e{old_text}"
+    new_text: "&7New text: &a{new_text}"
+    same_text: "&cNew text is the same as old text!"
+    invalid_line: "&cInvalid line!"
+    must_have_lines: "&cHologram must have at least one line!"
+
+    addline:
+      usage: "&cCorrect usage: /holo edit <name> addline <text>"
+      added: "&aLine added to hologram &e{name}"
+      failed: "&cFailed to add line: {error}"
+
+    editline:
+      usage: "&cCorrect usage: /holo edit <name> editline <line_number> <new_text>"
+      edited: "&aLine &e{line} &ahas been changed in hologram &e{name}"
+      failed: "&cFailed to edit line: {error}"
+
+    removeline:
+      usage: "&cCorrect usage: /holo edit <name> removeline <line_number>"
+      removed: "&aLine &e{line} &chas been removed in hologram {name}"
+      failed: "&cFailed to remove line: {error}"
+      now_has: "&aHologram &e{name} &anow has &e{line_count} &alines."
+
+    setoffsetx:
+      usage: "&cCorrect usage: /holo edit <name> set_offset_x <opt. line> <value>"
+      invalid_number: "&cOffset X must be a valid number!"
+      set: "&aSet offset X to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet offset X to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set offset X: {error}"
+      old_value: "&7Old value: &e{value}"
+      new_value: "&aNew value: &e{value}"
+
+    setoffsety:
+      usage: "&cCorrect usage: /holo edit <name> set_offset_y <opt. line> <value>"
+      invalid_number: "&cOffset Y must be a valid number!"
+      set: "&aSet offset Y to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet offset Y to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set offset Y: {error}"
+      old_value: "&7Old value: &e{value}"
+      new_value: "&aNew value: &e{value}"
+
+    setoffsetz:
+      usage: "&cCorrect usage: /holo edit <name> set_offset_z <opt. line> <value>"
+      invalid_number: "&cOffset Z must be a valid number!"
+      set: "&aSet offset Z to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet offset Z to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set offset Z: {error}"
+      old_value: "&7Old value: &e{value}"
+      new_value: "&aNew value: &e{value}"
+
+    setscale:
+      usage: "&cCorrect usage: /holo edit <name> set_scale <opt. line> [x,y,z]"
+      invalid_format: "&cInvalid format! Use format [x,y,z]"
+      example: "&8Example: &7[2,1,2] or &7[1.5,0.5,2]"
+      set: "&aSet scale for hologram &e{name} &ato &e{x}, {y}, {z}"
+      set_line: "&aSet scale for line &e{line} &aof hologram &e{name} to &e{x}, {y}, {z}"
+      failed: "&cFailed to set scale: {error}"
+
+    setshadowstrength:
+      usage: "&cCorrect usage: /holo edit <name> set_shadowstrength <opt. line> <0-1.0>"
+      info: "&bControls shadow opacity as a function of distance from the block below"
+      invalid_range: "&cShadow strength must be between 0 and 1.0!"
+      invalid_number: "&cShadow strength must be a valid number!"
+      set: "&aSet shadow strength to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet shadow strength to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set shadow strength: {error}"
+
+    setopacity:
+      usage: "&cCorrect usage: /holo edit <name> set_opacity <opt. line> <0-255>"
+      info: "&bAlpha value of rendered text. Range: 0 to 255"
+      invalid_range: "&cText opacity must be between 0 and 255!"
+      invalid_number: "&cText opacity must be a valid number!"
+      set: "&aSet text opacity to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet text opacity to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set text opacity: {error}"
+
+    setshadowradius:
+      usage: "&cCorrect usage: /holo edit <name> set_shadowradius <opt. line> <value>"
+      info: "&bShadow radius. Values above 64 are capped to 64"
+      invalid_number: "&cShadow radius must be a valid number!"
+      radius_capped: "&eGiven shadow radius value &e{value} &eis greater than the maximum allowed value &e64&e. Set to 64."
+      set: "&aSet shadow radius to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet shadow radius to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set shadow radius: {error}"
+
+    setlinewidth:
+      usage: "&cCorrect usage: /holo edit <name> set_linewidth <opt. line> <width>"
+      invalid_number: "&cLine width must be a valid number!"
+      set: "&aSet line width to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet line width to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set line width: {error}"
+
+    setalignment:
+      usage: "&cCorrect usage: /holo edit <name> set_alignment <opt. line> <LEFT|CENTER|RIGHT>"
+      info: "&bAvailable options: &eLEFT&b, &eCENTER&b, &eRIGHT"
+      invalid_alignment: "&cInvalid alignment!"
+      set: "&aSet alignment to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet alignment to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set alignment: {error}"
+
+    setbillboard:
+      usage: "&cCorrect usage: /holo edit <name> set_billboard <opt. line> <FIXED|VERTICAL|HORIZONTAL|CENTER>"
+      info: "&bAvailable options: &eFIXED&b, &eVERTICAL&b, &eHORIZONTAL&b, &eCENTER"
+      invalid_billboard: "&cInvalid billboard type!"
+      set: "&aSet billboard to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet billboard to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set billboard: {error}"
+
+    setshadow:
+      usage: "&cCorrect usage: /holo edit <name> set_shadow <opt. line> <true|false>"
+      info: "&bEnable or disable shadow on the hologram."
+      invalid_value: "&cValue must be &etrue &cor &efalse"
+      set: "&aShadow has been set to &e{value} &afor hologram &e{name}"
+      set_line: "&aShadow has been set to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set shadow: {error}"
+
+    setseethrough:
+      usage: "&cCorrect usage: /holo edit <name> set_seethrough <opt. line> <true|false>"
+      info: "&bEnable or disable hologram visibility through blocks"
+      invalid_value: "&cValue must be &etrue &cor &efalse"
+      set: "&aBlock visibility has been set to &e{value} &afor hologram &e{name}"
+      set_line: "&aBlock visibility has been set to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set block visibility: {error}"
+
+    setbrightness:
+      usage: "&cCorrect usage: /holo edit <name> set_brightness <sky/block> <opt. line> <0-15>"
+      info: "&bSet brightness for sky or block"
+      invalid_type: "&cBrightness type must be &esky &cor &eblock"
+      invalid_brightness: "&cBrightness must be between 0 and 15!"
+      set: "&aSet brightness &e{type} &nto &e{value} &afor hologram &e{name}"
+      set_line: "&aSet brightness &e{type} &nto &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set brightness: {error}"
+      brightness_not_number: "&cBrightness must be a valid number!"
+
+    setviewrange:
+      usage: "&cCorrect usage: /holo edit <name> set_viewrange <opt. line> <range>"
+      invalid_number: "&cRange must be a valid number! (0.01 or higher)"
+      set: "&aSet view range to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet view range to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set view range: {error}"
+
+    setbackground:
+      usage: "&cCorrect usage: /holo edit <name> set_background <opt. line> <argb_hex>"
+      info: "&bColor format: &effffffff &b(e.g.&effff0000&b)"
+      invalid_color: "&cInvalid hexadecimal color format!"
+      set: "&aSet background color to &e{value} &afor hologram &e{name}"
+      set_line: "&aSet background color to &e{value} &afor line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set background color: {error}"
+
+    setdefaultbackground:
+      usage: "&cCorrect usage: /holo edit <name> set_defaultbackground <opt. line> <true|false>"
+      info: "&bIf true, Minecraft's default background will be used"
+      invalid_value: "&cValue must be &etrue &cor &efalse"
+      set: "&aDefault background for hologram &e{name} &ahas been set to &e{value}"
+      set_line: "&aDefault background for hologram &e{name} &ahas been set to &e{value} on line &e{line}"
+      failed: "&cFailed to set default background: {error}"
+
+    setpermission:
+      usage: "&cCorrect usage: /holo edit <name> set_permission <opt. line> <permission>"
+      info: "&bSet permission required to see the hologram. If line is not provided, it will set permission for the entire hologram."
+      set: "&aSet permission to &e{value} for hologram &e{name}"
+      set_line: "&aSet permission to &e{value} for line &e{line} &aof hologram &e{name}"
+      failed: "&cFailed to set permission: {error}"
+
+    setleftrotation:
+      usage: "&cCorrect usage: /holo edit <name> set_leftrotation <opt. line> [x,y,z,w]"
+      info: "&bSet left rotation as a quaternion [x,y,z,w]"
+      invalid_format: "&cInvalid format! Use format [x,y,z,w]"
+      example: "&8Example: &7[0,0,0,1] or &7[0.7,0,0,0.7]"
+      set: "&aSet left rotation for hologram &e{name} &ato &e{x}, {y}, {z}, {w} &afor hologram &e{name}"
+      set_line: "&aSet left rotation for line &e{line} &aof hologram &e{name} to &e{x}, {y}, {z}, {w}"
+      failed: "&cFailed to set left rotation: {error}"
+
+    setrightrotation:
+      usage: "&cCorrect usage: /holo edit <name> set_rightrotation <opt. line> [x,y,z,w]"
+      info: "&bSet right rotation as a quaternion [x,y,z,w]"
+      invalid_format: "&cInvalid format! Use format [x,y,z,w]"
+      example: "&8Example: &7[0,0,0,1] or &7[0.7,0,0,0.7]"
+      set: "&aSet right rotation for hologram &e{name} &ato &e{x}, {y}, {z}, {w} &afor hologram &e{name}"
+      set_line: "&aSet right rotation for line &e{line} &aof hologram &e{name} to &e{x}, {y}, {z}, {w}"
+      failed: "&cFailed to set right rotation: {error}"
+
+  # NON-EDIT COMMANDS BELOW
+
+  list:
+    usage: "&cCorrect usage: /holo list [page]"
+    header: "&6&l=== HoloFX - Hologram List ==="
+    empty: "&cNo holograms are loaded"
+    entry: "&e{name} &8- &7World: &e{world} &8- &7Status: {status}"
+    active: "&aActive"
+    inactive: "&cInactive"
+    footer: "&6&l=========================="
+    page_info: "&bPage &e{current}&b/&e{total}"
+    invalid_page: "&cPage number must be a number!"
+    page_out_of_range: "&cPage &e{page} &cdoes not exist! Available pages: &e1&c-&e{max}"
+    next_page_hint: "&7Type &e{command} &7to go to page &e{page}"
+
+  settings:
+    usage: "&cCorrect usage: /holo settings <hologram_name>"
+    not_found: "&cHologram &e{name} &cnot found!"
+    invalid_world: "&cHologram &e{name} &chas an invalid world!"
+    book_added: "&aSettings book added to inventory!"
+    error: "&cError: {error}"
+    line_out_of_range: "&cLine number out of range! Hologram has &e{line_count} &clines."
+    header: "&c&l━━━━━━━━━━━━━━━━━━━━━━"
+    hologram_name: "&e{name}"
+    line_number: "&7Line &e{line}"
+    text_header: "&c&lText:"
+    text_content: "&3{text}"
+    offset_header: "&c&lOffset:"
+    offset_x: "&7X: &3{value}"
+    offset_y: "&7Y: &3{value}"
+    offset_z: "&7Z: &3{value}"
+    settings_header: "&c&lLINE SETTINGS &e{line}"
+    text_opacity: "&7Text opacity: &3{value}&7/255"
+    line_width: "&7Line width: &3{value}"
+    alignment: "&7Alignment: &3{value}"
+    billboard: "&7Billboard: &3{value}"
+    shadow: "&7Shadow: &3{value}"
+    see_through: "&7See-through: &3{value}"
+    shadow_radius: "&7Shadow radius: &3{value}"
+    shadow_strength: "&7Shadow strength: &3{value}"
+    view_range: "&7View range: &3{value}"
+    background: "&7Background: &3{value}"
+    default_background: "&7Default background: &3{value}"
+    permission: "&7Permission: &3{value}"
+    brightness: "&7Brightness: &3{value}"
+    glow_color_override: "&7Glow color: &3{value}"
+    translation: "&7Translation: &3{value}"
+    left_rotation: "&7Left rotation: &3{value}"
+    right_rotation: "&7Right rotation: &3{value}"
+    scale: "&7Scale: &3{value}"
+    footer: "&c&l━━━━━━━━━━━━━━━━━━━━━━"
+    not_available: "&8N/A"
+    enabled: "&a&l✓"
+    disabled: "&c&l✗"
+
+  reload:
+    usage: "&cCorrect usage: /holo reload [opt. hologram_name]"
+    reloading: "&bReloading files..."
+    reloaded: "&aFiles have been reloaded successfully in &e{ms}&ams!"
+    failed: "&cFailed to reload files: {error}"
+    messages_loaded: "&aMessages have been loaded"
+    holograms_loaded: "&a{count} holograms loaded"
+    hologram_reloaded: "&aHologram &e{name} &aloaded successfully in &e{ms}&ams"
+    hologram_not_found: "&cHologram &e{name} &cnot found in configuration!"
+    hologram_despawned: "&aHologram &e{name} &ahas been despawned"
+    hologram_world_invalid: "&cWorld &e{world} &cfor hologram &e{name} &cdoes not exist!"
+    hologram_spawn_failed: "&cFailed to summon hologram &e{name}&c!"
+
+  player_only: "&cThis command is only available for players!"
+  permission_denied: "&cYou do not have permission for this command!"
+  unknown_command: "&cUnknown command! Type &e/holo &cto see available commands"
+
+  subcommand:
+    invalid_arguments: "&cInvalid arguments! Correct usage: {usage}"
+

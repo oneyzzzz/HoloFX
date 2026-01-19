@@ -19,7 +19,7 @@ import java.util.Map;
 
 @CommandInfo(
         commandName = "tp",
-        permission = "holo.tp",
+        permission = "holo.teleport",
         usage = "holo tp <hologram_name>",
         descriptionPath = "descriptions.teleport",
         onlyPlayer = true,
