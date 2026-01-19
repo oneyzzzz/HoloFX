@@ -1,0 +1,112 @@
+HOLOFX - CUSTOM NON-COMMERCIAL LICENSE (v1.1)
+Copyright (c) 2024–2026 oneyz_
+
+================================================================================
+DEFINITIONS
+================================================================================
+1. "Project" means the software distributed under this license (the "HoloFX" project),
+   including source code, binaries, documentation and other materials.
+
+2. "You" means any natural person or legal entity that obtains a copy of the Project.
+
+================================================================================
+GRANT OF LICENSE
+================================================================================
+3. Subject to the terms below, the copyright holder grants You a non-exclusive,
+   non-transferable, revocable license to use, copy and modify the Project for
+   personal, non-commercial purposes.
+
+================================================================================
+PERMITTED USE
+================================================================================
+4. You may:
+   a) use the Project for personal, non-commercial purposes;
+   b) modify the Project for your own personal use;
+   c) publicly host, publish or distribute modified or unmodified versions of the
+      Project **only if** they are distributed free of charge and not for commercial gain;
+   d) submit contributions (pull requests) to the Project.
+
+================================================================================
+FORKS AND REDISTRIBUTION
+================================================================================
+5. Forks and public redistributions are permitted only for non-commercial purposes.
+   Any public fork or redistribution must:
+   a) retain this license file and the original copyright notice;
+   b) include a visible statement that the fork is an unofficial modification;
+   c) not be sold, sublicensed, or otherwise monetized.
+
+================================================================================
+PROHIBITED USE / COMMERCIAL RESTRICTIONS
+================================================================================
+6. You MAY NOT, without explicit prior written permission from the copyright holder:
+   a) sell, license for a fee, sublicense, rent, lease, or otherwise monetize the Project
+      or any derivative work;
+   b) distribute modified versions of the Project for commercial gain;
+   c) incorporate the Project into a commercial product or service where the Project
+      itself is sold, licensed or separately charged for;
+   d) claim authorship of the original Project or remove or alter attributions.
+
+7. Clarification regarding monetized Minecraft servers:
+   a) Operating a monetized Minecraft server that uses the Project **does not**
+      by itself constitute prohibited commercial use **provided that** the Project
+      itself is not sold or separately charged for, and access to the Project's
+      code or plugin binary is not sold separately.
+   b) Charging for unrelated server services (donations, ranks, cosmetics)
+      is permitted provided the Project is neither sold nor required to obtain access.
+
+================================================================================
+COMMERCIAL LICENSE / PERMISSION
+================================================================================
+8. Commercial use (including any use described in section 6) is only permitted
+   with an explicit written license from the copyright holder. Contact details
+   for commercial licensing are given below.
+
+================================================================================
+INTELLECTUAL PROPERTY
+================================================================================
+9. All intellectual property rights in the Project remain with the copyright holder.
+   No assignment of ownership is made by this license.
+
+================================================================================
+CONTRIBUTIONS
+================================================================================
+10. By submitting a contribution (e.g., pull request), you represent that you have
+    the right to grant the contribution under the terms of this license. Unless
+    agreed otherwise in writing, contributions are accepted under the same
+    non-commercial terms.
+
+================================================================================
+DISCLAIMER OF WARRANTY; LIMITATION OF LIABILITY
+================================================================================
+11. The Project is provided "AS IS", without warranty of any kind, express or implied.
+12. In no event shall the copyright holder be liable for any claim, damages or other
+    liability arising from the use of the Project.
+
+================================================================================
+TERMINATION
+================================================================================
+13. Your rights under this license terminate automatically if you violate any term.
+    Upon termination you must cease all distribution and use of the Project and
+    remove publicly hosted copies (to the extent reasonably practicable).
+14. Sections concerning liability, intellectual property rights, and termination
+    survive termination.
+
+================================================================================
+CHANGES TO THIS LICENSE
+================================================================================
+15. The copyright holder may publish updated versions of this license.
+16. Changes apply only to releases published after the change. Previously released
+    versions remain governed by the license in effect at the time of their release.
+
+================================================================================
+CONTACT FOR COMMERCIAL LICENSING
+================================================================================
+For commercial licensing or permission requests contact: oneyz_
+(please provide a clear description of intended commercial use)
+
+================================================================================
+ACCEPTANCE
+================================================================================
+By using, copying, or distributing the Project you agree to be bound by the terms
+of this license.
+================================================================================

@@ -1,0 +1,49 @@
+name: HoloFX
+version: '1.0'
+main: org.oneyz.holoFX.HoloFX
+api-version: '1.21'
+load: STARTUP
+authors: [ oneyz_ ]
+description: "Advanced hologram management system with per-line permissions, dynamic editing, and batch loading optimization"
+website: "https://github.com"
+
+commands:
+  holo:
+    description: Main command for HoloFX hologram management system
+    usage: "/holo [create|list|reload|settings|summon|remove|edit|move|teleport|save]"
+    aliases: [hologram, hf]
+    permission: holo.use
+
+permissions:
+  holo.use:
+    description: Allow access to HoloFX commands
+    default: op
+  holo.create:
+    description: Allow creating new holograms
+    default: op
+    parent: holo.use
+  holo.list:
+    description: Allow listing holograms
+    default: op
+    parent: holo.use
+  holo.summon:
+    description: Allow summoning holograms
+    default: op
+    parent: holo.use
+  holo.remove:
+    description: Allow removing holograms
+    default: op
+    parent: holo.use
+  holo.reload:
+    description: Allow reloading hologram configurations
+    default: op
+    parent: holo.use
+  holo.edit:
+    description: Allow editing hologram properties
+    default: op
+    parent: holo.use
+  holo.settings:
+    description: Allow viewing hologram settings
+    default: op
+    parent: holo.use
+
