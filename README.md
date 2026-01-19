@@ -73,6 +73,7 @@ holo.remove           - Remove holograms (default: op)
 holo.reload           - Reload configurations (default: op)
 holo.edit             - Edit holograms (default: op)
 holo.settings         - Access settings interface (default: op)
+holo.teleport         - Teleport to hologram (default: op)
 ```
 
 ## Configuration
